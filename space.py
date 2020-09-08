@@ -1,6 +1,10 @@
 import turtle
 import math
 import random
+
+def newmethod115():
+    return playsound
+
 from playsound import playsound
 
 #Make a function to move the player 
@@ -9,19 +13,21 @@ def move_left():
     x -= playerspeed
     if x < -280:
         x = -280
-    player.setx(x)
+    newmethod699(x)
 
 def move_right():
     x = player.xcor()
     x += playerspeed
     if x > 280:
         x = 280
+         bulletstate
+def newmethod699(x):
     player.setx(x)
 
 def fire_bullet():
     global bulletstate
-    if bulletstate == "ready":
-        bulletstate = "fire"
+    if newvariable539 == "ready":
+        newvariable539 = "fire"
         x = player.xcor()
         y = player.ycor() + 10
         bullet.setposition(x, y)
@@ -93,7 +99,7 @@ bullet.hideturtle()
 
 bulletspeed = 20
 
-bulletstate = "ready"
+newvariable539 = "ready"
 
 enemy_bullet_speed = 20
 #Add a certain number of enemies
@@ -151,7 +157,7 @@ while True:
             enemyspeed *= -1
             
     #Move the bullet and make it shoot
-    if bulletstate == "fire":
+    if newvariable539 == "fire":
         #playsound('laser.wav')
         y = bullet.ycor()
         y += bulletspeed
@@ -159,12 +165,12 @@ while True:
 
     if bullet.ycor() > 275:
         bullet.hideturtle()
-        bulletstate = "ready"
+        newvariable539 = "ready"
 
     if isCollision(bullet, enemy):
         #playsound('explosion.wav')
         bullet.hideturtle()
-        bulletstate = "ready"
+        newvariable539 = "ready"
         bullet.setposition(0, -400)
         
 
